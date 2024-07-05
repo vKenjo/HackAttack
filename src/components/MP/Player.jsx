@@ -1,7 +1,8 @@
 import React from "react";
 
 const Player = () => {
-    let health = 100;
+    
+    
     return (
         <div id='player'>
             <div id='avatar'>
