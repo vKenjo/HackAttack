@@ -7,6 +7,8 @@ import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
 import LanguageTopics from './components/SP/LanguageTopics';
 import Learn from './components/SP/topic/Learn';
 import LearnFrame from './components/Pages/LearnFrame';
+import QuizFrame from './components/Pages/QuizFrame';
+
 
 const Home = () => (
   <>
@@ -40,6 +42,7 @@ const App = () => {
         <Route path="/language/:id" element={<LanguageTopics />} />
         <Route path="/language/:id/topic/learn" element={<Learn />} />
         <Route path="/language/:id/topic/learn/frame" element={<LearnFrame />} />
+        <Route path="/language/:id/topic/quiz/*" element={<QuizFrame />} />
       </Routes>
     </Router>
   );
