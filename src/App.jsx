@@ -1,5 +1,4 @@
-// App.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import HomeFrame from './components/HomeFrame';
@@ -12,7 +11,7 @@ import QuizFrame from './components/Pages/QuizFrame';
 import Quiz from './components/SP/topic/Quiz/Quiz';
 import Result from './components/SP/topic/Quiz/Result';
 import MultiPlayerFrame from './components/Layout/MultiPlayerFrame';
-import BattleFrame from './components/Pages/BattleFrame'; // Import BattleFrame component
+import Battle from './components/MP/Battle'; // Import Battle component
 import Confirm from './components/MP/Confirm'; // Import Confirm component
 import Win from './components/MP/Win'; // Import Win component
 import Lose from './components/MP/Lose'; // Import Lose component
@@ -24,6 +23,17 @@ const SinglePlayer = () => <SinglePlayerFrame />;
 const MultiPlayer = () => <MultiPlayerFrame />;
 
 const App = () => {
+    const [playerHealth, setPlayerHealth] = useState(5);
+    const [enemyHealth, setEnemyHealth] = useState(5);
+
+    const handleAnswer = (isCorrect) => {
+        if (isCorrect) {
+            setEnemyHealth(prev => prev - 1);
+        } else {
+            setPlayerHealth(prev => prev - 1);
+        }
+    };
+
     return (
         <Router>
             <div className='flex flex-col h-screen justify-between'>
@@ -41,7 +51,13 @@ const App = () => {
                             <Route path="/language/:id/topic/quiz" element={<Quiz />} />
                             <Route path="/result" element={<Result />} />
                             <Route path="/confirm" element={<Confirm />} /> {/* Route for Confirm */}
-                            <Route path="/battle" element={<BattleFrame />} /> {/* Route for BattleFrame */}
+                            <Route path="/battle" element={
+                                <Battle
+                                    playerHealth={playerHealth}
+                                    enemyHealth={enemyHealth}
+                                    onAnswer={handleAnswer}
+                                />
+                            } /> {/* Route for Battle */}
                             <Route path="/win" element={<Win />} /> {/* Route for Win */}
                             <Route path="/lose" element={<Lose />} /> {/* Route for Lose */}
                         </Routes>
