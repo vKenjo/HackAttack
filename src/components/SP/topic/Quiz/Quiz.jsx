@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRandomQuestions, sanitizeAnswer } from './Utils.js';
-import pythonCurriculum from '../../LanguageJSON/pythonCurriculum.json';
+import pythonGET from '../../LanguageJSON/pythonGET.json';
 
 const Quiz = () => {
   // State variables
@@ -12,11 +12,11 @@ const Quiz = () => {
 
   // Fetches and processes data on component mount
   useEffect(() => {
-    console.log(pythonCurriculum); // Log curriculum data for debugging
+    console.log(pythonGET); // Log curriculum data for debugging
 
     // Check if curriculum data exists
-    if (pythonCurriculum && pythonCurriculum.subtopics && pythonCurriculum.subtopics.length > 0) {
-      const subtopic = pythonCurriculum.subtopics[0]; // Select the first subtopic for now
+    if (pythonGET && pythonGET.subtopics && pythonGET.subtopics.length > 0) {
+      const subtopic = pythonGET.subtopics[0]; // Select the first subtopic for now
       console.log("Selected Subtopic:", subtopic);
 
       // Check if questions exist in the subtopic
