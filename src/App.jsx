@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -10,34 +10,36 @@ import LearnFrame from './components/Pages/LearnFrame';
 import MultiPlayerFrame from "./components/Layout/MultiPlayerFrame.jsx";
 
 const Home = () => (
-    <Hero />
+    <Hero/>
 );
 
 const SinglePlayer = () => (
-  <SinglePlayerFrame />
+    <SinglePlayerFrame/>
 );
 
 const MultiPlayer = () => (
-    <MultiPlayerFrame />
+    <MultiPlayerFrame/>
 );
 
 const App = () => {
-  return (
-    <Router>
-        <div className='flex flex-col h-screen justify-between'>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/singleplayer" element={<SinglePlayer />} />
-        <Route path="/multiplayer" element={<MultiPlayer />} />
-        <Route path="/language/:id" element={<LanguageTopics />} />
-        <Route path="/language/:id/topic/learn" element={<Learn />} />
-        <Route path="/language/:id/topic/learn/frame" element={<LearnFrame />} />
-      </Routes>
-        <Footer />
-        </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div className='flex flex-col h-screen justify-between'>
+                <Header/>
+                <div className='flex-auto'>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/singleplayer" element={<SinglePlayer/>}/>
+                        <Route path="/multiplayer" element={<MultiPlayer/>}/>
+                        <Route path="/language/:id" element={<LanguageTopics/>}/>
+                        <Route path="/language/:id/topic/learn" element={<Learn/>}/>
+                        <Route path="/language/:id/topic/learn/frame" element={<LearnFrame/>}/>
+                    </Routes>
+                </div>
+                <Footer/>
+            </div>
+        </Router>
+    );
 };
 
 export default App;
