@@ -5,7 +5,7 @@ const Learn = () => {
   const { id } = useParams();
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className='flex flex-col m-auto justify-center items-center p-20 text-white text-3xl'>
       <h1>Welcome to Learn to Code</h1>
       <p>Start your coding journey by watching the video and trying out the exercises below.</p>
       <Link to={`/language/${id}/topic/learn/frame`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block">
