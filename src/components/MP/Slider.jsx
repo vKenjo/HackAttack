@@ -58,20 +58,20 @@ const Slider = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
+        className: 'flex items-center justify-between m-auto w-10/12'
     };
     return (
-        <div className='flex items-center justify-between '>
-            <SlickSlider {...settings}>
-                { slides.map((course) => (
-                        <div key={course.title} className='w-40 h-60 bg-black' onClick={ navigate(course.url)}>
-                            <p className='text-white'>{course.title}</p>
-                            <p>sample</p>
-                        </div>
-                    )
-                )}
+        <SlickSlider {...settings}>
+            {slides.map((course) => (
+                    <div key={course.title} className='w-1/12 h-60 bg-black overflow-hidden' onClick={navigate(course.url)}>
+                        <p className='text-white'>{course.title}</p>
+                        <p>sample</p>
+                    </div>
+                )
+            )}
 
-            </SlickSlider>
-        </div>
+        </SlickSlider>
+
     );
 };
 

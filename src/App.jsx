@@ -16,7 +16,11 @@ const Home = () => (
 );
 
 const SinglePlayer = () => (
-  <SinglePlayerFrame />
+    <div className='flex flex-col h-screen justify-between'>
+        <Header/>
+        <SinglePlayerFrame/>
+        <Footer/>
+    </div>
 );
 
 const MultiPlayer = () => (

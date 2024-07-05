@@ -1,13 +1,11 @@
 import React from 'react';
 
 const Footer = () => {
-  return (
-    <footer className="bg-gray-800 text-white p-4 mt-10">
-      <div className="container mx-auto text-center">
-        <p>&copy; 2024 MySite. All rights reserved.</p>
-      </div>
-    </footer>
-  );
+    return (
+        <footer className="flex w-screen bg-gray-800 min-h-16 items-center justify-center">
+            <p className='text-center text-white mx-auto'>&copy; 2024 MySite. All rights reserved.</p>
+        </footer>
+    );
 };
 
 export default Footer;
