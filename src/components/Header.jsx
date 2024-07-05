@@ -9,8 +9,8 @@ const Header = () => {
         <nav>
           <ul className="flex space-x-4">
             <li><Link to="/" className="hover:text-gray-400">Home</Link></li>
-            <li><Link to="/SinglePlayer" className="hover:text-gray-400">Singleplayer</Link></li>
-            <li><Link to="/Multiplayer" className="hover:text-gray-400">Multiplayer</Link></li>
+            <li><Link to="/singleplayer" className="hover:text-gray-400">Singleplayer</Link></li>
+            <li><Link to="/multiplayer" className="hover:text-gray-400">Multiplayer</Link></li>
           </ul>
         </nav>
       </div>

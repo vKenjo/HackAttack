@@ -4,7 +4,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
-import LanguageTopics from './components/SP/LanguageTopics'; 
+import LanguageTopics from './components/SP/LanguageTopics';
+import HeroMP from './components/MP/Hero.jsx'
 
 const Home = () => (
     <>
@@ -33,8 +34,8 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/SinglePlayer" element={<SinglePlayer />} />
-        <Route path="/Multiplayer" element={<MultiPlayer />} />
+        <Route path="/singleplayer" element={<SinglePlayer />} />
+        <Route path="/multiplayer" element={<MultiPlayer />} />
         <Route path="/language/:id" element={<LanguageTopics />} /> 
       </Routes>
     </Router>
