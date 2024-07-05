@@ -3,7 +3,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
-import HeroMP from './components/MP/Hero.jsx';
+import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
+import LanguageTopics from './components/SP/LanguageTopics'; // Import the LanguageTopics component
 
 const Home = () => (
     <>
@@ -14,11 +15,7 @@ const Home = () => (
 );
 
 const SinglePlayer = () => (
-    <div className="container mx-auto py-20">
-        <h1 className="text-4xl font-bold mb-4">Singleplayer</h1>
-        <p className="text-lg">This is the Singleplayer page.</p>
-
-    </div>
+  <SinglePlayerFrame />
 );
 
 const MultiPlayer = () => (
@@ -32,15 +29,17 @@ const MultiPlayer = () => (
 );
 
 const App = () => {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/singleplayer" element={<SinglePlayer/>}/>
-                <Route path="/multiplayer" element={<MultiPlayer/>}/>
-            </Routes>
-        </Router>
-    );
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/SinglePlayer" element={<SinglePlayer />} />
+        <Route path="/Multiplayer" element={<MultiPlayer />} />
+        <Route path="/language/:id" element={<LanguageTopics />} /> 
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
