@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
+import LanguageTopics from './components/SP/LanguageTopics'; // Import the LanguageTopics component
 
 const Home = () => (
   <>
@@ -13,7 +14,7 @@ const Home = () => (
 );
 
 const SinglePlayer = () => (
-  <SinglePlayerFrame /> // Render SinglePlayerFrame component here
+  <SinglePlayerFrame />
 );
 
 const MultiPlayer = () => (
@@ -29,8 +30,9 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/SinglePlayer" element={<SinglePlayer />} /> 
+        <Route path="/SinglePlayer" element={<SinglePlayer />} />
         <Route path="/Multiplayer" element={<MultiPlayer />} />
+        <Route path="/language/:id" element={<LanguageTopics />} /> 
       </Routes>
     </Router>
   );
