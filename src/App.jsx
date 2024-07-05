@@ -25,8 +25,8 @@ const App = () => {
         <Router>
             <div className='flex flex-col h-screen justify-between'>
                 <Header/>
-
                 <div className='flex-auto'>
+                <div className='bg-[url("/GENERAL/BACKGROUND_ONLY.svg")] bg-cover bg-fixed h-full'>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
                         <Route path="/singleplayer" element={<SinglePlayer/>}/>
@@ -38,6 +38,7 @@ const App = () => {
                         <Route path="/language/:id/topic/quiz" element={<Quiz/>}/> {/* Route for Quiz Component */}
                         <Route path="/result" element={<Result/>}/>
                     </Routes>
+                    </div>
                 </div>
                 <Footer/>
             </div>
