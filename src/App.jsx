@@ -7,12 +7,10 @@ import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
 import LanguageTopics from './components/SP/LanguageTopics';
 import Learn from './components/SP/topic/Learn';
 import LearnFrame from './components/Pages/LearnFrame';
+import MultiPlayerFrame from "./components/Layout/MultiPlayerFrame.jsx";
 
 const Home = () => (
-  <>
     <Hero />
-    <Footer />
-  </>
 );
 
 const SinglePlayer = () => (
@@ -20,27 +18,24 @@ const SinglePlayer = () => (
 );
 
 const MultiPlayer = () => (
-  <>
-    <div className="container mx-auto py-20">
-      <h1 className="text-4xl font-bold mb-4">Multiplayer</h1>
-      <p className="text-lg">This is the Multiplayer page.</p>
-    </div>
-    <HeroMP title={'Multiplayer'} subtitle={'This is the Multiplayer page.'} />
-  </>
+    <MultiPlayerFrame />
 );
 
 const App = () => {
   return (
     <Router>
+        <div className='flex flex-col h-screen justify-between'>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/SinglePlayer" element={<SinglePlayer />} />
-        <Route path="/Multiplayer" element={<MultiPlayer />} />
+        <Route path="/singleplayer" element={<SinglePlayer />} />
+        <Route path="/multiplayer" element={<MultiPlayer />} />
         <Route path="/language/:id" element={<LanguageTopics />} />
         <Route path="/language/:id/topic/learn" element={<Learn />} />
         <Route path="/language/:id/topic/learn/frame" element={<LearnFrame />} />
       </Routes>
+        <Footer />
+        </div>
     </Router>
   );
 };
