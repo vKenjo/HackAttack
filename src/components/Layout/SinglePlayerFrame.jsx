@@ -1,10 +1,10 @@
 import React from 'react';
-import languagesData from './languages.json';
+import languagesData from '../../languages.json';
 
-const Languages = () => {
+const SinglePlayerFrame = () => {
   return (
     <div className="p-6">
-      <h2 className="text-3xl font-bold mb-6">Languages</h2>
+      <h2 className="text-3xl font-bold mb-6">Single Player Frame</h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {languagesData.language.map(lang => (
           <div key={lang.id} className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -19,4 +19,4 @@ const Languages = () => {
   );
 };
 
-export default Languages;
+export default SinglePlayerFrame;
