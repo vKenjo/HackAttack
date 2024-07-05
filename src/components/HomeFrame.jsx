@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeFrame = () => {
     return (
-        <section className='bg-[url("/GENERAL/BACKGROUND_ONLY.svg")] h-full'>
+        <section className='bg-[url("/HOMEPAGE_COMPONENTS/HOMEPAGE.svg")] h-full'>
             <div className=''>
                 <div className=''>
                     <h1 className=''></h1>
