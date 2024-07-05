@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
+import HomeFrame from './components/HomeFrame.jsx';
 import Footer from './components/Footer';
 import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
 import LanguageTopics from './components/SP/LanguageTopics';
@@ -10,7 +10,7 @@ import LearnFrame from './components/Pages/LearnFrame';
 import MultiPlayerFrame from "./components/Layout/MultiPlayerFrame.jsx";
 
 const Home = () => (
-    <Hero/>
+    <HomeFrame/>
 );
 
 const SinglePlayer = () => (
