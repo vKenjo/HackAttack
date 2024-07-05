@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import HomeFrame from './components/HomeFrame.jsx';
 import Footer from './components/Footer';
@@ -12,32 +12,37 @@ import Quiz from './components/SP/topic/Quiz/Quiz'; // Import Quiz Component
 import Result from './components/SP/topic/Quiz/Result';
 import MultiPlayerFrame from './components/Layout/MultiPlayerFrame';
 
-const Home = () => <Hero />;
+const Home = () => <HomeFrame/>;
 
-const Home = () => (
-    <HomeFrame/>
+const SinglePlayer = () => (
+    <SinglePlayerFrame />
 );
 
-const MultiPlayer = () => <MultiPlayerFrame />;
+const MultiPlayer = () => <MultiPlayerFrame/>;
 
 const App = () => {
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/SinglePlayer" element={<SinglePlayer />} />
-        <Route path="/Multiplayer" element={<MultiPlayer />} />
-        <Route path="/language/:id" element={<LanguageTopics />} />
-        <Route path="/language/:id/topic/learn" element={<Learn />} />
-        <Route path="/language/:id/topic/learn/frame" element={<LearnFrame />} />
-        <Route path="/language/:id/topic/quiz/*" element={<QuizFrame />} />
-        <Route path="/language/:id/topic/quiz" element={<Quiz />} /> {/* Route for Quiz Component */}
-        <Route path="/result" element={<Result />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+    return (
+        <Router>
+            <div className='flex flex-col h-screen justify-between'>
+                <Header/>
+
+                <div className='flex-auto'>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/singleplayer" element={<SinglePlayer/>}/>
+                        <Route path="/multiplayer" element={<MultiPlayer/>}/>
+                        <Route path="/language/:id" element={<LanguageTopics/>}/>
+                        <Route path="/language/:id/topic/learn" element={<Learn/>}/>
+                        <Route path="/language/:id/topic/learn/frame" element={<LearnFrame/>}/>
+                        <Route path="/language/:id/topic/quiz/*" element={<QuizFrame/>}/>
+                        <Route path="/language/:id/topic/quiz" element={<Quiz/>}/> {/* Route for Quiz Component */}
+                        <Route path="/result" element={<Result/>}/>
+                    </Routes>
+                </div>
+                <Footer/>
+            </div>
+        </Router>
+    );
 };
 
 export default App;
