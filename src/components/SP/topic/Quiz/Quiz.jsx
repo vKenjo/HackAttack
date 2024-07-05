@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRandomQuestions, sanitizeAnswer } from './Utils.js';
 import pythonGET from '../../LanguageJSON/pythonGET.json';
+import './Quiz.css'; // Make sure the CSS file is correctly linked
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -31,29 +32,30 @@ const Quiz = () => {
   };
 
   const handleSubmit = () => {
-    navigate('/result', { state: { questions, answers } });  // Fixed path for navigation
+    navigate('/result', { state: { questions, answers } });
   };
 
   return (
-    <div>
+    <div className="quiz-container">
       <h1>Quiz</h1>
       {error ? (
-        <p>{error}</p>
+        <p className="error">{error}</p>
       ) : questions.length === 0 ? (
-        <p>Loading questions...</p>
+        <p className="loading">Loading questions...</p>
       ) : (
         questions.map((q, idx) => (
-          <div key={q.id}>
-            <p>{idx + 1}. {q.question}</p>
+          <div key={q.id} className="question-container">
+            <p className="question"><span className="question-number">{idx + 1}.</span> {q.question}</p>
             <input
               type="text"
+              className="answer-input"
               onChange={(e) => handleChange(e, q.id)}
               value={answers[q.id] || ''}
             />
           </div>
         ))
       )}
-      <button onClick={handleSubmit} disabled={questions.length === 0}>Submit</button>
+      <button className="submit-btn" onClick={handleSubmit} disabled={questions.length === 0}>Submit</button>
     </div>
   );
 };

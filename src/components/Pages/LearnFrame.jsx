@@ -85,8 +85,8 @@ const LearnFrame = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Learn to Code</h1>
+    <div className='flex flex-col items-center justify-center text-white pt-10 text-center'>
+      <h1 className='text-4xl font-bold py-2'>Learn to Code</h1>
       <div>
         <h2>Watch this Video</h2>
         <iframe
@@ -97,6 +97,7 @@ const LearnFrame = () => {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          className='my-10'
         ></iframe>
       </div>
       <button onClick={toggleTheme} style={{ marginBottom: '20px', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px' }}>
@@ -104,8 +105,8 @@ const LearnFrame = () => {
       </button>
 
       {topics.map((topic, index) => (
-        <div key={index} style={{ marginBottom: '40px' }}>
-          <h2>{topic}</h2>
+        <div key={index} className='mb-10 bg-gray-800 rounded-2xl py-6 w-1/2'>
+          <h2 className='text-yellow-500 text-2xl pb-5 font-bold'>{topic}</h2>
           <p>{getInstruction(topic)}</p>
           <CodeMirror
             value={code}
@@ -126,7 +127,7 @@ const LearnFrame = () => {
           </button>
         </div>
       ))}
-      <p>{feedback}</p>
+      <p className='text-2xl my-6' >{feedback}</p>
     </div>
   );
 };
