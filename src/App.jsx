@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -8,20 +8,15 @@ import LanguageTopics from './components/SP/LanguageTopics';
 import Learn from './components/SP/topic/Learn';
 import LearnFrame from './components/Pages/LearnFrame';
 import QuizFrame from './components/Pages/QuizFrame';
+import Quiz from './components/SP/topic/Quiz/Quiz'; // Import Quiz Component
 import Result from './components/SP/topic/Quiz/Result';
+import MultiPlayerFrame from './components/Layout/MultiPlayerFrame';
 
+const Home = () => <Hero />;
 
-const Home = () => (
-    <Hero/>
-);
+const SinglePlayer = () => <SinglePlayerFrame />;
 
-const SinglePlayer = () => (
-    <SinglePlayerFrame/>
-);
-
-const MultiPlayer = () => (
-    <MultiPlayerFrame/>
-);
+const MultiPlayer = () => <MultiPlayerFrame />;
 
 const App = () => {
   return (
@@ -35,8 +30,10 @@ const App = () => {
         <Route path="/language/:id/topic/learn" element={<Learn />} />
         <Route path="/language/:id/topic/learn/frame" element={<LearnFrame />} />
         <Route path="/language/:id/topic/quiz/*" element={<QuizFrame />} />
+        <Route path="/language/:id/topic/quiz" element={<Quiz />} /> {/* Route for Quiz Component */}
         <Route path="/result" element={<Result />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
