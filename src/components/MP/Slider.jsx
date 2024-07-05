@@ -63,13 +63,12 @@ const Slider = () => {
     return (
         <SlickSlider {...settings}>
             {slides.map((course) => (
-                    <div key={course.title} className='w-1/12 h-60 bg-black overflow-hidden' onClick={navigate(course.url)}>
+                    <div key={course.title} className='bg-black overflow-hidden' onClick={navigate(course.url)}>
                         <p className='text-white'>{course.title}</p>
                         <p>sample</p>
                     </div>
                 )
             )}
-
         </SlickSlider>
 
     );

@@ -5,8 +5,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
 import LanguageTopics from './components/SP/LanguageTopics';
-import Learn from './components/SP/topic/Learn';
-import LearnFrame from './components/Pages/LearnFrame';
+import MultiPlayerFrame from "./components/Layout/MultiPlayerFrame.jsx";
 
 const Home = () => (
   <>
