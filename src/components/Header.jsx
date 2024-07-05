@@ -1,9 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <header className="bg-blue-600 text-white p-4">
+      <nav className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-xl font-bold">
+          AppName
+        </Link>
+        <div>
+          <Link to="/" className="mx-2">Home</Link>
+          <Link to="/about" className="mx-2">SinglePlayer</Link>
+          <Link to="/contact" className="mx-2">Multiplayer</Link>
+        </div>
+      </nav>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
