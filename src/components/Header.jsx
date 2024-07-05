@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="w-screen bg-gray-800 text-white h-20 flex justify-center sticky ">
+        <header className="w-screen bg-gray-800 text-white min-h-20 flex justify-center sticky ">
             <div className="h-auto m-auto w-8/12 flex justify-between align-middle items-center">
                     <img className='h-12' src='/GENERAL/LOGO.svg'/>
                 <nav>
