@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeFrame = () => {
     return (
-        <section className='bg-[url("/HOMEPAGE_COMPONENTS/HOMEPAGE.svg")] h-full'>
+        <>
             <div>
                 <img className='h-24 w-30' src='public/HOMEPAGE_COMPONENTS/STAR_ONLY.svg' />
             </div>
@@ -23,9 +23,7 @@ const HomeFrame = () => {
                     </div> 
                 </div>
             </div>
-            
-        </section>
-        
+        </>
     );
 };
 
