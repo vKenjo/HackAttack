@@ -63,7 +63,7 @@ const Slider = () => {
     return (
         <SlickSlider {...settings}>
             {slides.map((course) => (
-                    <div key={course.title} className='bg-black overflow-hidden' onClick={navigate(course.url)}>
+                    <div key={course.title} className='bg-black h-full' onClick={navigate(course.url)}>
                         <p className='text-white'>{course.title}</p>
                         <p>sample</p>
                     </div>

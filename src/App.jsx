@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -11,24 +11,15 @@ import QuizFrame from './components/Pages/QuizFrame';
 
 
 const Home = () => (
-  <>
-    <Hero />
-    <Footer />
-  </>
+    <Hero/>
 );
 
 const SinglePlayer = () => (
-  <SinglePlayerFrame />
+    <SinglePlayerFrame/>
 );
 
 const MultiPlayer = () => (
-  <>
-    <div className="container mx-auto py-20">
-      <h1 className="text-4xl font-bold mb-4">Multiplayer</h1>
-      <p className="text-lg">This is the Multiplayer page.</p>
-    </div>
-    <HeroMP title={'Multiplayer'} subtitle={'This is the Multiplayer page.'} />
-  </>
+    <MultiPlayerFrame/>
 );
 
 const App = () => {
