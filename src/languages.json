@@ -6,11 +6,6 @@
         "description": "Python is a versatile, high-level programming language known for its readability and simplicity. It is widely used in web development, scientific computing, artificial intelligence, and more."
       },
       {
-        "id": "2",
-        "language": "HTML/CSS",
-        "description": "HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are fundamental languages for building and designing web pages. HTML structures content, while CSS styles the presentation."
-      },
-      {
         "id": "3",
         "language": "Javascript",
         "description": "JavaScript is a dynamic programming language primarily used for web development. It allows interactive elements on websites and is essential for front-end and back-end web development."
