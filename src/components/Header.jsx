@@ -7,7 +7,7 @@ const Header = () => {
       <div className="h-fit m-auto w-8/12 flex justify-between align-middle">
       <div className="flex space-x-4">
       <h1 className="text-2xl font-bold">Insert Logo Here</h1>
-      <h1 className="text-2xl">Hi, TechieKid</h1>
+      <h1 className="text-2xl">Hi, TechieKid!</h1>
       </div>
         <nav>
           <ul className="flex space-x-4">

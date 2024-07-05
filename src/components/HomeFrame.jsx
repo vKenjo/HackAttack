@@ -3,6 +3,7 @@ import React from 'react';
 const HomeFrame = () => {
     return (
         <>
+
             <div>
                 <img className='h-24 w-30' src='public/HOMEPAGE_COMPONENTS/STAR_ONLY.svg' />
             </div>
