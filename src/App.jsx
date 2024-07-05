@@ -1,3 +1,4 @@
+// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
@@ -12,7 +13,8 @@ import Quiz from './components/SP/topic/Quiz/Quiz';
 import Result from './components/SP/topic/Quiz/Result';
 import MultiPlayerFrame from './components/Layout/MultiPlayerFrame';
 import BattleFrame from './components/Pages/BattleFrame'; // Import BattleFrame component
-import Confirm from './components/MP/Confirm'; // Import Confirm component
+import Win from './components/MP/Win'; // Import Win component
+import Lose from './components/MP/Lose'; // Import Lose component
 
 const Home = () => <HomeFrame />;
 
@@ -40,7 +42,8 @@ const App = () => {
                             <Route path="/language/:id/topic/quiz" element={<Quiz />} />
                             <Route path="/result" element={<Result />} />
                             <Route path="/battle" element={<BattleFrame />} /> {/* Route for BattleFrame */}
-                            <Route path="/confirm" element={<Confirm />} /> {/* Route for Confirm */}
+                            <Route path="/win" element={<Win />} /> {/* Route for Win */}
+                            <Route path="/lose" element={<Lose />} /> {/* Route for Lose */}
                         </Routes>
                     </div>
                 </div>
