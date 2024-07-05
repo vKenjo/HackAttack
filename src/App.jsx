@@ -4,11 +4,10 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
-import LanguageTopics from './components/SP/LanguageTopics'; // Import the LanguageTopics component
+import LanguageTopics from './components/SP/LanguageTopics'; 
 
 const Home = () => (
     <>
-        <Header/>
         <Hero/>
         <Footer/>
     </>
