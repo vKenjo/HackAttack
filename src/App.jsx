@@ -7,7 +7,8 @@ import SinglePlayerFrame from './components/Layout/SinglePlayerFrame';
 import LanguageTopics from './components/SP/LanguageTopics';
 import Learn from './components/SP/topic/Learn';
 import LearnFrame from './components/Pages/LearnFrame';
-import MultiPlayerFrame from "./components/Layout/MultiPlayerFrame.jsx";
+import QuizFrame from './components/Pages/QuizFrame';
+
 
 const Home = () => (
     <HomeFrame/>
@@ -22,24 +23,20 @@ const MultiPlayer = () => (
 );
 
 const App = () => {
-    return (
-        <Router>
-            <div className='flex flex-col h-screen justify-between'>
-                <Header/>
-                <div className='flex-auto'>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/singleplayer" element={<SinglePlayer/>}/>
-                        <Route path="/multiplayer" element={<MultiPlayer/>}/>
-                        <Route path="/language/:id" element={<LanguageTopics/>}/>
-                        <Route path="/language/:id/topic/learn" element={<Learn/>}/>
-                        <Route path="/language/:id/topic/learn/frame" element={<LearnFrame/>}/>
-                    </Routes>
-                </div>
-                <Footer/>
-            </div>
-        </Router>
-    );
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/SinglePlayer" element={<SinglePlayer />} />
+        <Route path="/Multiplayer" element={<MultiPlayer />} />
+        <Route path="/language/:id" element={<LanguageTopics />} />
+        <Route path="/language/:id/topic/learn" element={<Learn />} />
+        <Route path="/language/:id/topic/learn/frame" element={<LearnFrame />} />
+        <Route path="/language/:id/topic/quiz/*" element={<QuizFrame />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
