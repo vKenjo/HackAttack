@@ -1,16 +1,15 @@
-import React from "react";
+// components/Player.jsx
+import React from 'react';
 
-const Player = () => {
-    
-    
+const Player = ({ name, health, avatar }) => {
     return (
-        <div id='player'>
-            <div id='avatar'>
-
-            </div>
-            <div id='healthBar' className=''>
-                <icon> </icon>
-                <div id='health'> </div>
+        <div className="text-center">
+            <img src={avatar} alt={`${name} avatar`} className="mx-auto w-24 h-24" />
+            <h2 className="text-xl font-bold">{name}</h2>
+            <div className="flex justify-center">
+                {[...Array(health)].map((_, i) => (
+                    <span key={i} className="text-red-500 text-3xl">❤️</span>
+                ))}
             </div>
         </div>
     );
