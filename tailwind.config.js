@@ -4,7 +4,11 @@ module.exports = {
     './public/index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'mascot-python': "url('/public/')",
+        'mascot-java': "url('/public/')",
+      }},
   },
   plugins: [],
 }

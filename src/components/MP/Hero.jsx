@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import backgroundMP from './assets/BackgroundMP.svg'; // import BG image
+import Slider from './Slider.jsx';
 
 const Hero = ({ title, subtitle, children }) => {
 	Hero.propTypes = {
@@ -15,12 +15,13 @@ const Hero = ({ title, subtitle, children }) => {
 	};
 
 	return (
-		<div className='' style={{ backgroundImage: `url(${backgroundMP})` }}>
+		<div className=''>
 			<div className=''>
 				<h1 className=''>{title}</h1>
 				<p className=''>{subtitle}</p>
 				{children}
 			</div>
+			<Slider />
 		</div>
 	);
 };
