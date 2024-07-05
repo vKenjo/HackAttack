@@ -15,10 +15,11 @@ const Language = () => {
 
   return (
     <div className="container mx-auto py-10">
-      <h2 className="text-3xl font-bold mb-6">{language.language}</h2>
-      <p className="text-lg mb-4">{language.description}</p>
+      <h2 className="text-3xl font-bold mb-6 text-white">{language.language}</h2>
+      <p className="text-lg mb-4 text-white">{language.description}</p>
+      
       <h3 className="text-2xl font-bold mb-4">Topics</h3>
-      <ul className="list-disc pl-6">
+      <ul className="list-disc pl-6 text-white">
         {topics.map(topic => (
           <li key={topic.id}>{topic.title}</li>
         ))}
