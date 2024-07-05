@@ -1,30 +1,22 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const HomeFrame = () => {
     return (
-        <>
-
-            <div>
-                <img className='h-24 w-30' src='public/HOMEPAGE_COMPONENTS/STAR_ONLY.svg' />
-            </div>
-            
-            <div className=''>
-                <div className=''>
-                    <h1 className=''></h1>
-                    <p className=''></p>
+        <div className='bg-[url("/HOMEPAGE_COMPONENTS/HOMEPAGE.svg")] bg-cover bg-fixed h-full'>
+            <div className='flex-row h-full justify-end items-stretch'>
+                <div className='flex items-center justify-center absolute top-30 left-20'>
+                    <img className='inline-block h-24 w-30' src='public/HOMEPAGE_COMPONENTS/STAR_ONLY.svg'/>
+                    <p className='inline-block text-white text-3xl w-30'>TechieKid</p>
                 </div>
-            </div>
-            <div className='h-screen flex items-end justify-end p-4'>
-                <div className='flex gap-4 mb-4'>
-                    <div className=''>
-                        <img className='h-20 w-30' src='public/HOMEPAGE_COMPONENTS/B_MULTIPLAYER_ONLY.png' />
+                <div className=' flex-col items-end justify-end p-4 bottom-20 right-20 absolute'>
+                    <div className='flex gap-4 mb-4'>
+                        <Link to="/multiplayer"><img className='h-30 w-60' src='public/HOMEPAGE_COMPONENTS/B_MULTIPLAYER_ONLY.png'/></Link>
+                        <Link to="/singleplayer"><img className='h-30 w-60' src='public/HOMEPAGE_COMPONENTS/B_SOLO_ONLY.png'/></Link>
                     </div>
-                    <div className=''>
-                        <img className='h-20 w-30' src='public/HOMEPAGE_COMPONENTS/B_SOLO_ONLY.png' />
-                    </div> 
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
