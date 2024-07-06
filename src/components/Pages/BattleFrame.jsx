@@ -1,9 +1,9 @@
 // components/Pages/BattleFrame.jsx
 import React, { useState } from 'react';
-import Player from '../MP/Player';
-import Question from '../MP/Question';
+import Player from '../Player';
+import Question from '../Question';
 import Win from '../MP/Win';
-import Lose from '../MP/Lose';
+import Lose from '../Lose';
 
 const questions = [
     {

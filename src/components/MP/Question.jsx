@@ -1,4 +1,3 @@
-// Question.jsx
 import React, { useState } from 'react';
 
 const Question = ({ question, options, onAnswer }) => {
@@ -11,12 +10,12 @@ const Question = ({ question, options, onAnswer }) => {
     };
 
     return (
-        <div className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
-            <h3 className="text-lg font-bold mb-4">{question.text}</h3>
+        <div className="bg-white p-6 rounded-lg shadow-lg text-black">
+            <h3 className="text-xl font-bold mb-4">{question.text}</h3>
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                     {options.map((option, index) => (
-                        <label key={index} className={`block p-2 border rounded cursor-pointer ${selectedAnswer === option ? 'bg-yellow-300' : 'bg-gray-200'}`}>
+                        <label key={index} className={`block p-4 border rounded cursor-pointer text-center ${selectedAnswer === option ? 'bg-yellow-300' : 'bg-gray-200'}`}>
                             <input
                                 type="radio"
                                 name="answer"
@@ -29,7 +28,7 @@ const Question = ({ question, options, onAnswer }) => {
                         </label>
                     ))}
                 </div>
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full">
                     Submit
                 </button>
             </form>
