@@ -67,7 +67,7 @@ const Slider = ({ onSelect }) => {
 
     return (
         <div className="flex flex-col items-center">
-            <div className="relative w-full">
+            <div className="mt-4 max-w-6xl"> {/* Set a maximum width for the slider */}
                 <SlickSlider ref={sliderRef} {...settings}>
                     {slides.map((slide, index) => (
                         <div
@@ -75,8 +75,8 @@ const Slider = ({ onSelect }) => {
                             className="text-center cursor-pointer m-0 p-0 group relative rounded-lg overflow-hidden shadow-sm mx-4"
                             onClick={() => onSelect(slide)}
                             style={{
-                                width: '200px',
-                                height: '300px',
+                                width: '250px', // Increased width
+                                height: '450px', // Increased height
                             }}
                         >
                             <img
@@ -97,3 +97,4 @@ const Slider = ({ onSelect }) => {
 };
 
 export default Slider;
+    
