@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import HomeFrame from './components/HomeFrame';
@@ -23,17 +23,6 @@ const SinglePlayer = () => <SinglePlayerFrame />;
 const MultiPlayer = () => <MultiPlayerFrame />;
 
 const App = () => {
-    const [playerHealth, setPlayerHealth] = useState(5);
-    const [enemyHealth, setEnemyHealth] = useState(5);
-
-    const handleAnswer = (isCorrect) => {
-        if (isCorrect) {
-            setEnemyHealth(prev => prev - 1);
-        } else {
-            setPlayerHealth(prev => prev - 1);
-        }
-    };
-
     return (
         <Router>
             <div className='flex flex-col h-screen justify-between'>
@@ -51,13 +40,7 @@ const App = () => {
                             <Route path="/language/:id/topic/quiz" element={<Quiz />} />
                             <Route path="/result" element={<Result />} />
                             <Route path="/confirm" element={<Confirm />} /> {/* Route for Confirm */}
-                            <Route path="/battle" element={
-                                <Battle
-                                    playerHealth={playerHealth}
-                                    enemyHealth={enemyHealth}
-                                    onAnswer={handleAnswer}
-                                />
-                            } /> {/* Route for Battle */}
+                            <Route path="/battle" element={<Battle />} /> {/* Route for Battle */}
                             <Route path="/win" element={<Win />} /> {/* Route for Win */}
                             <Route path="/lose" element={<Lose />} /> {/* Route for Lose */}
                         </Routes>

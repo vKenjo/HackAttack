@@ -1,9 +1,7 @@
-// Battle.jsx
 import React, { useState } from 'react';
 import Player from './Player';
 import Question from './Question';
-import Win from './Win';
-import Lose from './Lose';
+import { useNavigate } from 'react-router-dom';
 
 const questions = [
     {
@@ -24,25 +22,32 @@ const Battle = () => {
     const [enemyHealth, setEnemyHealth] = useState(5);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [turn, setTurn] = useState('player'); // 'player' or 'enemy'
+    const [playerDamaged, setPlayerDamaged] = useState(false);
+    const [enemyDamaged, setEnemyDamaged] = useState(false);
+    const navigate = useNavigate();
 
     const handleAnswer = (isCorrect) => {
         if (turn === 'player' && isCorrect) {
+            setEnemyDamaged(true);
+            setTimeout(() => setEnemyDamaged(false), 2000); // Reset damage indicator after 2 seconds
             setEnemyHealth(prev => prev - 1);
         } else if (turn === 'enemy' && isCorrect) {
+            setPlayerDamaged(true);
+            setTimeout(() => setPlayerDamaged(false), 2000); // Reset damage indicator after 2 seconds
             setPlayerHealth(prev => prev - 1);
         }
         setTurn(turn === 'player' ? 'enemy' : 'player');
         setCurrentQuestion((currentQuestion + 1) % questions.length);
     };
 
-    if (playerHealth <= 0) return <Lose />;
-    if (enemyHealth <= 0) return <Win />;
+    if (playerHealth <= 0) navigate('/lose');
+    if (enemyHealth <= 0) navigate('/win');
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-[url('/GENERAL/BACKGROUND_FIGHT.svg')] bg-cover bg-fixed text-white">
             <div className="flex w-full justify-around mb-8">
-                <Player name="Player" health={playerHealth} avatar="./PYTHON.svg" />
-                <Player name="Enemy" health={enemyHealth} avatar="./JAVA.svg" />
+                <Player name="Player" health={playerHealth} avatar="./PYTHON.svg" isDamaged={playerDamaged} />
+                <Player name="Enemy" health={enemyHealth} avatar="./JAVA.svg" isDamaged={enemyDamaged} />
             </div>
             <div className="w-full max-w-3xl">
                 <Question

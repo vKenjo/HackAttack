@@ -1,13 +1,24 @@
 import React from 'react';
+import DamageIndicator from './DamageIndicator'; // Import DamageIndicator
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({ name, health, avatar }) => {
+const Player = ({ name, health, avatar, isDamaged }) => {
+    // Create an array to represent the health with hearts
+    const hearts = Array(health).fill(0);
+
     return (
         <div className="flex flex-col items-center">
-            <img src={avatar} alt={`${name} avatar`} className="w-40 h-40 mb-4 rounded-full object-cover" />
-            <h2 className="text-2xl font-bold text-center">{name}</h2>
-            <div className="flex mt-2">
-                {[...Array(health)].map((_, i) => (
-                    <span key={i} className="text-red-500 text-4xl mx-1">❤️</span>
+            <DamageIndicator isDamaged={isDamaged} />
+            <div className="mt-2 w-80 h-80"> {/* Adjusted size for larger avatars */}
+                
+                <img src={avatar} alt={`${name} avatar`} className="w-full h-full" />   
+                
+            </div>
+            <h2 className="text-xl font-bold">{name}</h2>
+            <div className="flex space-x-1 mt-1">
+                {hearts.map((_, index) => (
+                    <FontAwesomeIcon key={index} icon={faHeart} className="text-red-600" />
                 ))}
             </div>
         </div>
