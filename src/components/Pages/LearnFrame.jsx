@@ -121,11 +121,11 @@ const LearnFrame = () => {
               mode: 'python',
               theme: theme,
               lineNumbers: true,
-              placeholder: '//Code here', // Add placeholder text
+              placeholder: '//Code here',
             }}
             onBeforeChange={handleChange}
             editorDidMount={editor => {
-              editor.setSize("100%", "150px"); // Set the height of the editor
+              editor.setSize("100%", "150px"); 
             }}
           />
         </div>
